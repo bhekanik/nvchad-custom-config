@@ -119,7 +119,7 @@ local plugins = {
   {
     "Exafunction/codeium.vim",
     lazy = false,
-  }
+  },
 }
 
 return plugins

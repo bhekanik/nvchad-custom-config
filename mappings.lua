@@ -21,10 +21,14 @@ M.general = {
     },
 
     -- save
-    ["<leader>s"] = { "<cmd> w <CR>", "save file" },
+    ["<leader>s"] = { "<cmd> w <CR><leader>fm", "save file and format" },
   },
   i = {
     ["£"] = { "#", "hash symbol", opts = { nowait = true } },
+  },
+  v = {
+    [">"] = { ">gv", "Add indent", opts = { noremap = true } },
+    ["<"] = { "<gv", "Remove indent", opts = { noremap = true } },
   },
 }
 

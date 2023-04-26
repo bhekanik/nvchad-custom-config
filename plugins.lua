@@ -116,6 +116,9 @@ local plugins = {
     "mbbill/undotree",
     lazy = false,
   },
+  {
+    "Exafunction/codeium.vim",
+    lazy = false,
   }
 }
 

@@ -18,6 +18,9 @@ M.general = {
       end,
       "close buffer",
     },
+
+    -- save
+    ["<leader>s"] = { "<cmd> w <CR>", "save file" },
   },
   i = {
     ["£"] = { "#", "hash symbol", opts = { nowait = true } },

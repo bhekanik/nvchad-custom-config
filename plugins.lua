@@ -97,8 +97,13 @@ local plugins = {
   },
   {
     "kdheepak/lazygit.nvim",
-    lazy = false
+    lazy = false,
   },
+  {
+    "nvim-treesitter/nvim-treesitter-context",
+    dependencies = "nvim-treesitter/nvim-treesitter",
+    lazy = false,
+  }
 }
 
 return plugins

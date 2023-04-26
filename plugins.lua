@@ -108,6 +108,10 @@ local plugins = {
     "f-person/git-blame.nvim",
     lazy = false,
   },
+  {
+    "tpope/vim-surround",
+    lazy = false,
+  },
   }
 }
 

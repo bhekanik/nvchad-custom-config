@@ -11,6 +11,13 @@ M.general = {
     ["<C-j>"] = { "<cmd> TmuxNavigateDown<CR>", "window down"},
     ["<C-k>"] = { "<cmd> TmuxNavigateUp<CR>", "window up"},
     ["<leader>gg"] = { "<cmd> LazyGit <CR>", "Open LazyGit", opts = { silent = true } },
+    -- close buffer + hide terminal buffer
+    ["<leader>w"] = {
+      function()
+        require("nvchad_ui.tabufline").close_buffer()
+      end,
+      "close buffer",
+    },
   },
   i = {
     ["£"] = { "#", "hash symbol", opts = { nowait = true } },

@@ -112,6 +112,10 @@ local plugins = {
     "tpope/vim-surround",
     lazy = false,
   },
+  {
+    "mbbill/undotree",
+    lazy = false,
+  },
   }
 }
 

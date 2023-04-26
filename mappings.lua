@@ -10,6 +10,7 @@ M.general = {
     ["<C-l>"] = { "<cmd> TmuxNavigateRight<CR>", "window right"},
     ["<C-j>"] = { "<cmd> TmuxNavigateDown<CR>", "window down"},
     ["<C-k>"] = { "<cmd> TmuxNavigateUp<CR>", "window up"},
+    ["<leader><F5>"] = { "<cmd> UndotreeToggle<CR>", "Toggle UndoTree"},
     ["<leader>gg"] = { "<cmd> LazyGit <CR>", "Open LazyGit", opts = { silent = true } },
     -- close buffer + hide terminal buffer
     ["<leader>w"] = {

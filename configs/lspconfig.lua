@@ -12,6 +12,20 @@ for _, lsp in ipairs(servers) do
     capabilities = capabilities,
   }
 end
+-- emmet
+
+local configs = require "lspconfig/configs"
+
+configs.ls_emmet = {
+  default_config = {
+     cmd = { "ls_emmet", "--stdio" },
+     filetypes = { "html", "css", "scss" },
+     root_dir = function()
+        return vim.loop.cwd()
+     end,
+     settings = {},
+  },
+}
 
 -- 
 -- lspconfig.pyright.setup { blabla}

@@ -103,6 +103,11 @@ local plugins = {
     "nvim-treesitter/nvim-treesitter-context",
     dependencies = "nvim-treesitter/nvim-treesitter",
     lazy = false,
+  },
+  {
+    "f-person/git-blame.nvim",
+    lazy = false,
+  },
   }
 }
 

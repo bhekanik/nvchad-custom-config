@@ -21,7 +21,7 @@ M.general = {
     },
 
     -- save
-    ["<leader>s"] = { "<cmd> w <CR><leader>fm", "save file and format" },
+    ["<leader>s"] = { "<cmd> w <CR>", "save file" },
   },
   i = {
     ["£"] = { "#", "hash symbol", opts = { nowait = true } },

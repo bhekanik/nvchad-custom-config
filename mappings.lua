@@ -6,11 +6,11 @@ M.general = {
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
     ["£"] = { "#", "hash symbol", opts = { nowait = true } },
     ["0"] = { "^", "go to line start", opts = { nowait = true } },
-    ["<C-h>"] = { "<cmd> TmuxNavigateLeft<CR>", "window left"},
-    ["<C-l>"] = { "<cmd> TmuxNavigateRight<CR>", "window right"},
-    ["<C-j>"] = { "<cmd> TmuxNavigateDown<CR>", "window down"},
-    ["<C-k>"] = { "<cmd> TmuxNavigateUp<CR>", "window up"},
-    ["<leader><F5>"] = { "<cmd> UndotreeToggle<CR>", "Toggle UndoTree"},
+    ["<C-h>"] = { "<cmd> TmuxNavigateLeft<CR>", "window left" },
+    ["<C-l>"] = { "<cmd> TmuxNavigateRight<CR>", "window right" },
+    ["<C-j>"] = { "<cmd> TmuxNavigateDown<CR>", "window down" },
+    ["<C-k>"] = { "<cmd> TmuxNavigateUp<CR>", "window up" },
+    ["<leader><F5>"] = { "<cmd> UndotreeToggle<CR>", "Toggle UndoTree" },
     ["<leader>gg"] = { "<cmd> LazyGit <CR>", "Open LazyGit", opts = { silent = true } },
     -- close buffer + hide terminal buffer
     ["<leader>w"] = {
@@ -19,7 +19,6 @@ M.general = {
       end,
       "close buffer",
     },
-
     -- save
     ["<leader>s"] = { "<cmd> w <CR>", "save file" },
   },
@@ -32,12 +31,33 @@ M.general = {
   },
 }
 
+M.nvterm = {
+  plugin = true,
+  t = {
+    ["<C-j>"] = {
+      function()
+        require("nvterm.terminal").toggle "horizontal"
+      end,
+      "toggle horizontal term",
+    },
+  },
+  n = {
+    ["<C-j>"] = {
+      function()
+        require("nvterm.terminal").toggle "horizontal"
+      end,
+      "toggle horizontal term",
+    },
+  },
+}
+
+
 -- more keybinds!
 M.dap = {
   n = {
     ["<leader>db"] = { "<cmd> DapToggleBreakpoint <CR>", "Toggle breakpoint" },
     ["<leader>dus"] = {
-      function ()
+      function()
         local widgets = require('dap.ui.widgets');
         local sidebar = widgets.sidebar(widgets.scopes);
         sidebar.open();
@@ -50,7 +70,7 @@ M.dap = {
 M.crates = {
   n = {
     ["<leader>rcu"] = {
-      function ()
+      function()
         require('crates').upgrade_all_crates()
       end,
       "update crates"

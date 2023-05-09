@@ -5,6 +5,7 @@ local plugins = {
 
   -- Override plugin definition options
 
+  -- LSP
   {
     "neovim/nvim-lspconfig",
     dependencies = {
@@ -38,7 +39,6 @@ local plugins = {
     opts = overrides.nvimtree,
   },
 
-  -- Install a plugin
   {
     "max397574/better-escape.nvim",
     event = "InsertEnter",
@@ -47,16 +47,17 @@ local plugins = {
     end,
   },
 
-  -- To make a plugin not be loaded
-  -- {
-  --   "NvChad/nvim-colorizer.lua",
-  --   enabled = false
-  -- },
+  {
+    "NvChad/nvim-colorizer.lua",
+    enabled = false
+  },
 
   {
     "christoomey/vim-tmux-navigator",
     lazy = false,
   },
+
+  -- Sensible defaults for Rust LSP
   {
     "rust-lang/rust.vim",
     ft = "rust",
@@ -64,58 +65,73 @@ local plugins = {
       vim.g.rustfmt_autosave = 1
     end
   },
+
   {
     "simrat39/rust-tools.nvim",
     ft = "rust",
     dependencies = "neovim/nvim-lspconfig",
-    opts = function ()
+    opts = function()
       return require "custom.configs.rust-tools"
     end,
-    config = function (_, opts)
+    config = function(_, opts)
       require('rust-tools').setup(opts)
     end
   },
+
+  -- debugger
   {
     "mfussenegger/nvim-dap",
   },
+
+  -- fancy stuff for rust crates
   {
     "saecki/crates.nvim",
-    ft = {"rust", "toml"},
-    config = function (_, opts)
+    ft = { "rust", "toml" },
+    config = function(_, opts)
       local crates = require('crates')
       crates.setup(opts)
       crates.show()
     end
   },
+
   {
     "hrsh7th/nvim-cmp",
-    opts = function ()
+    opts = function()
       local M = require "plugins.configs.cmp"
-      table.insert(M.sources, {name = "crates"})
+      table.insert(M.sources, { name = "crates" })
       return M
     end,
   },
+
+  -- LazyGit
   {
     "kdheepak/lazygit.nvim",
     lazy = false,
   },
+
+  -- Fancy function context at the top
   {
     "nvim-treesitter/nvim-treesitter-context",
     dependencies = "nvim-treesitter/nvim-treesitter",
     lazy = false,
   },
+
   {
     "f-person/git-blame.nvim",
     lazy = false,
   },
+
   {
     "tpope/vim-surround",
     lazy = false,
   },
+
   {
     "mbbill/undotree",
     lazy = false,
   },
+
+  -- AI code completion
   {
     "Exafunction/codeium.vim",
     lazy = false,

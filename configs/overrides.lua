@@ -3,6 +3,7 @@ local M = {}
 M.treesitter = {
   ensure_installed = {
     "vim",
+    "svelte",
     "lua",
     "html",
     "css",
@@ -32,6 +33,7 @@ M.mason = {
     "css-lsp",
     "html-lsp",
     "typescript-language-server",
+    "svelte-language-server",
     "deno",
     "prettier",
 
@@ -39,7 +41,7 @@ M.mason = {
     "clangd",
     "clang-format",
 
-    "rust-analyzer"
+    "rust-analyzer",
   },
 }
 
@@ -48,7 +50,6 @@ M.nvimtree = {
   git = {
     enable = true,
   },
-
   renderer = {
     highlight_git = true,
     icons = {

@@ -22,4 +22,5 @@ opt.smartcase = true
 opt.ruler = true
 opt.cursorline = true
 opt.mouse = "a"
-opt.title = true
+opt.laststatus = 2
+opt.hlsearch = true

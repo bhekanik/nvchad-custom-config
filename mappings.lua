@@ -3,7 +3,7 @@ local M = {}
 
 M.general = {
   n = {
-    -- [";"] = { ":", "enter command mode", opts = { nowait = true } },
+    [";"] = { ":", "enter command mode", opts = { nowait = true } },
     ["£"] = { "#", "hash symbol", opts = { nowait = true } },
     ["0"] = { "^", "go to line start", opts = { nowait = true } },
     ["<C-h>"] = { "<cmd> TmuxNavigateLeft<CR>", "window left" },

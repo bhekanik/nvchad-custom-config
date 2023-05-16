@@ -14,13 +14,25 @@ autocmd("BufWritePre", {
 
 local opt = vim.opt
 
+-- opt.guicursor = ""
+opt.wrap = false
+
+opt.winbar = "%=%m %f"
+
+opt.nu = true
 opt.relativenumber = true
+
 opt.autoindent = true
 opt.smartindent = true
-opt.incsearch = true
+
 opt.smartcase = true
 opt.ruler = true
 opt.cursorline = true
 opt.mouse = "a"
 opt.laststatus = 2
-opt.hlsearch = true
+opt.scrolloff = 8
+
+opt.termguicolors = true
+
+opt.hlsearch = false
+opt.incsearch = true

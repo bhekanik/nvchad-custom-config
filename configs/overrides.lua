@@ -2,18 +2,20 @@ local M = {}
 
 M.treesitter = {
   ensure_installed = {
-    "vim",
-    "svelte",
-    "lua",
-    "html",
-    "css",
-    "rust",
-    "javascript",
-    "typescript",
-    "tsx",
     "c",
+    "css",
+    "html",
+    "javascript",
+    "lua",
     "markdown",
     "markdown_inline",
+    "prisma",
+    "python",
+    "rust",
+    "svelte",
+    "tsx",
+    "typescript",
+    "vim",
   },
   indent = {
     enable = true,
@@ -36,12 +38,14 @@ M.mason = {
     "svelte-language-server",
     "deno",
     "prettier",
+    "prismals",
 
     -- c/cpp stuff
     "clangd",
     "clang-format",
 
     "rust-analyzer",
+    "pyright-lsp",
   },
 }
 

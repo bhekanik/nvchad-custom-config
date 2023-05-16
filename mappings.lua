@@ -11,8 +11,8 @@ M.general = {
     ["<C-j>"] = { "<cmd> TmuxNavigateDown<CR>", "window down" },
     ["<C-d>"] = { "<C-d>zz", "Page down and center" },
     ["<C-u>"] = { "<C-u>zz", "Page up and center" },
-    ["N"] = { "Nzz", "Previous found item centered" },
-    ["n"] = { "nzz", "Next found item centered" },
+    ["N"] = { "Nzzzv", "Previous found item centered" },
+    ["n"] = { "nzzzv", "Next found item centered" },
     ["<C-k>"] = { "<cmd> TmuxNavigateUp<CR>", "window up" },
     ["<leader><F5>"] = { "<cmd> UndotreeToggle<CR>", "Toggle UndoTree" },
     ["<leader>gg"] = { "<cmd> LazyGit <CR>", "Open LazyGit", opts = { silent = true } },
@@ -25,13 +25,24 @@ M.general = {
     },
     -- save
     ["<leader>s"] = { "<cmd> w <CR>", "save file" },
+    ["<C-p>"] = { "<cmd> Telescope find_files<CR>", "Find files" },
+    ["<C-p>p"] = { "<cmd> Telescope commands<CR>", "Find commands" },
   },
   i = {
     ["£"] = { "#", "hash symbol", opts = { nowait = true } },
+    ["<C-p>"] = { "<cmd> Telescope find_files<CR>", "Find files" },
+    ["<C-p>p"] = { "<cmd> Telescope commands<CR>", "Find commands" },
   },
   v = {
     [">"] = { ">gv", "Add indent", opts = { noremap = true } },
     ["<"] = { "<gv", "Remove indent", opts = { noremap = true } },
+    ["J"] = { ":m '>+1<CR>gv=gv", "Add indent" },
+    ["K"] = { ":m '<-2<CR>gv=gv", "Remove indent" },
+  },
+  x = {
+    ["p"] = { '"_dP', "Paste from clipboard", opts = { noremap = true } },
+    ["<C-p>"] = { "<cmd> Telescope find_files<CR>", "Find files" },
+    ["<C-p>p"] = { "<cmd> Telescope commands<CR>", "Find commands" },
   },
 }
 

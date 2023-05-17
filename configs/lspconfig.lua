@@ -5,20 +5,20 @@ local lspconfig = require "lspconfig"
 
 -- if you just want default config for the servers then put them in a table
 local servers = {
+  "clangd",
+  "cssls",
   "docker_compose_language_service",
   "dockerls",
-  "clangd",
   "gopls",
-  "solargraph",
   "html",
-  "svelte",
-  "prismals",
-  "cssls",
-  "tsserver",
-  "clangd",
-  "tailwindcss",
   "pyright",
+  "prismals",
   "ruby_ls",
+  "solargraph",
+  "svelte",
+  "tailwindcss",
+  "terraform_lsp",
+  "tsserver",
 }
 
 for _, lsp in ipairs(servers) do

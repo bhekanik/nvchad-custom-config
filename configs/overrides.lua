@@ -13,6 +13,8 @@ M.treesitter = {
     "python",
     "rust",
     "svelte",
+    "svelte",
+    "terraform",
     "tsx",
     "typescript",
     "vim",
@@ -38,14 +40,14 @@ M.mason = {
     "svelte-language-server",
     "deno",
     "prettier",
-    "prismals",
 
     -- c/cpp stuff
     "clangd",
     "clang-format",
 
     "rust-analyzer",
-    "pyright-lsp",
+    "prisma-language-server",
+    "pyright",
   },
 }
 

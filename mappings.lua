@@ -25,13 +25,9 @@ M.general = {
     },
     -- save
     ["<leader>s"] = { "<cmd> w <CR>", "save file" },
-    ["<C-p>"] = { "<cmd> Telescope find_files<CR>", "Find files" },
-    ["<C-p>p"] = { "<cmd> Telescope commands<CR>", "Find commands" },
   },
   i = {
     ["£"] = { "#", "hash symbol", opts = { nowait = true } },
-    ["<C-p>"] = { "<cmd> Telescope find_files<CR>", "Find files" },
-    ["<C-p>p"] = { "<cmd> Telescope commands<CR>", "Find commands" },
   },
   v = {
     [">"] = { ">gv", "Add indent", opts = { noremap = true } },
@@ -41,15 +37,13 @@ M.general = {
   },
   x = {
     ["p"] = { '"_dP', "Paste from clipboard", opts = { noremap = true } },
-    ["<C-p>"] = { "<cmd> Telescope find_files<CR>", "Find files" },
-    ["<C-p>p"] = { "<cmd> Telescope commands<CR>", "Find commands" },
   },
 }
 
 M.nvterm = {
   plugin = true,
   t = {
-    ["<C-j>"] = {
+    ["<leader>h"] = {
       function()
         require("nvterm.terminal").toggle "horizontal"
       end,
@@ -57,7 +51,7 @@ M.nvterm = {
     },
   },
   n = {
-    ["<C-j>"] = {
+    ["<leader>h"] = {
       function()
         require("nvterm.terminal").toggle "horizontal"
       end,

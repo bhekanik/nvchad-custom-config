@@ -43,7 +43,7 @@ M.general = {
 M.nvterm = {
   plugin = true,
   t = {
-    ["<leader>h"] = {
+    ["<C-h>"] = {
       function()
         require("nvterm.terminal").toggle "horizontal"
       end,
@@ -51,7 +51,7 @@ M.nvterm = {
     },
   },
   n = {
-    ["<leader>h"] = {
+    ["<C-h>"] = {
       function()
         require("nvterm.terminal").toggle "horizontal"
       end,

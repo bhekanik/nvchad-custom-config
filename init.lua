@@ -12,6 +12,18 @@ autocmd("BufWritePre", {
   command = "lua vim.lsp.buf.format()",
 })
 
+autocmd("BufWritePost", {
+  pattern = { "*tmux.conf" },
+  command = "execute 'silent !tmux source <afile> --silent'",
+})
+
+-- Organize imports
+autocmd("FileType", {
+  pattern = "typescript",
+  command =
+  "lua vim.lsp.buf.execute_command { command = '_typescript.organizeImports', arguments = { vim.fn.expand('%:p') } }",
+})
+
 local opt = vim.opt
 
 -- opt.guicursor = ""

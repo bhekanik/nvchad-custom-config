@@ -15,6 +15,8 @@ M.general = {
     ["n"] = { "nzzzv", "Next found item centered" },
     ["<C-k>"] = { "<cmd> TmuxNavigateUp<CR>", "window up" },
     ["<leader><F5>"] = { "<cmd> UndotreeToggle<CR>", "Toggle UndoTree" },
+    ["<leader>sv"] = { "<cmd> :vsplit<CR>", "Split buffer vertically" },
+    ["<leader>sh"] = { "<cmd> :split<CR>", "Split buffer horizontally" },
     ["<leader>gg"] = { "<cmd> LazyGit <CR>", "Open LazyGit", opts = { silent = true } },
     -- close buffer + hide terminal buffer
     ["<leader>w"] = {
@@ -43,20 +45,20 @@ M.general = {
 M.nvterm = {
   plugin = true,
   t = {
-    ["<C-h>"] = {
-      function()
-        require("nvterm.terminal").toggle "horizontal"
-      end,
-      "toggle horizontal term",
-    },
+    -- ["<C-h>"] = {
+    --   function()
+    --     require("nvterm.terminal").toggle "horizontal"
+    --   end,
+    --   "toggle horizontal term",
+    -- },
   },
   n = {
-    ["<C-h>"] = {
-      function()
-        require("nvterm.terminal").toggle "horizontal"
-      end,
-      "toggle horizontal term",
-    },
+    -- ["<C-h>"] = {
+    --   function()
+    --     require("nvterm.terminal").toggle "horizontal"
+    --   end,
+    --   "toggle horizontal term",
+    -- },
   },
 }
 

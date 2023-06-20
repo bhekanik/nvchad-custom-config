@@ -1,4 +1,4 @@
-local overrides = require("custom.configs.overrides")
+local overrides = require "custom.configs.overrides"
 
 ---@type NvPluginSpec[]
 local plugins = {
@@ -26,7 +26,7 @@ local plugins = {
   -- override plugin configs
   {
     "williamboman/mason.nvim",
-    opts = overrides.mason
+    opts = overrides.mason,
   },
 
   {
@@ -49,7 +49,7 @@ local plugins = {
 
   {
     "NvChad/nvim-colorizer.lua",
-    enabled = false
+    enabled = false,
   },
 
   {
@@ -63,7 +63,7 @@ local plugins = {
     ft = "rust",
     init = function()
       vim.g.rustfmt_autosave = 1
-    end
+    end,
   },
 
   {
@@ -74,8 +74,8 @@ local plugins = {
       return require "custom.configs.rust-tools"
     end,
     config = function(_, opts)
-      require('rust-tools').setup(opts)
-    end
+      require("rust-tools").setup(opts)
+    end,
   },
 
   -- debugger
@@ -88,17 +88,31 @@ local plugins = {
     "saecki/crates.nvim",
     ft = { "rust", "toml" },
     config = function(_, opts)
-      local crates = require('crates')
+      local crates = require "crates"
       crates.setup(opts)
       crates.show()
-    end
+    end,
   },
 
   {
     "hrsh7th/nvim-cmp",
+    dependencies = {
+      {
+        "zbirenbaum/copilot-cmp",
+        config = function()
+          require("copilot_cmp").setup()
+        end,
+      },
+    },
     opts = function()
       local M = require "plugins.configs.cmp"
+      table.insert(M.sources, { name = "copilot", group_index = 2 })
       table.insert(M.sources, { name = "crates" })
+      table.insert(M.sources, { name = "nvim_lsp", group_index = 2 })
+      table.insert(M.sources, { name = "luasnip", group_index = 2 })
+      table.insert(M.sources, { name = "buffer", group_index = 2 })
+      table.insert(M.sources, { name = "nvim_lua", group_index = 2 })
+      table.insert(M.sources, { name = "path", group_index = 2 })
       return M
     end,
   },
@@ -134,7 +148,30 @@ local plugins = {
   -- AI code completion
   {
     "Exafunction/codeium.vim",
-    lazy = false,
+    lazy = true,
+    enabled = false,
+  },
+
+  {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
+    config = function()
+      require("copilot").setup {
+        suggestion = {
+          enabled = true,
+          auto_trigger = true,
+          keymap = {
+            accept = "<C-l>",
+            accept_word = false,
+            accept_line = false,
+            next = "<M-]>",
+            prev = "<M-[>",
+            dismiss = "<C-]>",
+          },
+        },
+      }
+    end,
   },
 }
 

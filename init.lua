@@ -24,6 +24,10 @@ autocmd("FileType", {
   "lua vim.lsp.buf.execute_command { command = '_typescript.organizeImports', arguments = { vim.fn.expand('%:p') } }",
 })
 
+-- vim.g.copilot_no_tab_map = true
+-- vim.g.copilot_assume_mapped = true
+-- vim.g.copilot_tab_fallback = ""
+
 local opt = vim.opt
 
 -- opt.guicursor = ""

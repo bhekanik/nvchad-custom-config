@@ -27,16 +27,43 @@ M.general = {
     },
     -- save
     ["<leader>s"] = { "<cmd> w <CR>", "save file" },
+    ["-"] = {
+      function()
+        require("oil").open_float()
+      end,
+      "Open parent directory floating",
+    },
+    ["<leader>-"] = {
+      function()
+        require("oil").toggle_float()
+      end,
+      "Toggle Oil floating",
+    },
   },
+
   i = {
     ["£"] = { "#", "hash symbol", opts = { nowait = true } },
   },
+
   v = {
     [">"] = { ">gv", "Add indent", opts = { noremap = true } },
     ["<"] = { "<gv", "Remove indent", opts = { noremap = true } },
     ["J"] = { ":m '>+1<CR>gv=gv", "Add indent" },
     ["K"] = { ":m '<-2<CR>gv=gv", "Remove indent" },
+    ["-"] = {
+      function()
+        require("oil").open_float()
+      end,
+      "Open parent directory floating",
+    },
+    ["<leader>-"] = {
+      function()
+        require("oil").toggle_float()
+      end,
+      "Toggle Oil floating",
+    },
   },
+
   x = {
     ["p"] = { '"_dP', "Paste from clipboard", opts = { noremap = true } },
   },

@@ -180,6 +180,10 @@ local plugins = {
     -- Optional dependencies
     dependencies = { "nvim-tree/nvim-web-devicons" },
   },
+
+  {
+    "lewis6991/gitsigns.nvim",
+  },
 }
 
 return plugins

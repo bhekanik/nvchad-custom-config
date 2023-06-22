@@ -184,6 +184,10 @@ local plugins = {
   {
     "lewis6991/gitsigns.nvim",
   },
+
+  {
+    "mg979/vim-visual-multi",
+  },
 }
 
 return plugins

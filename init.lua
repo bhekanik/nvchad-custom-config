@@ -19,7 +19,7 @@ autocmd("BufWritePost", {
 
 -- Organize imports
 autocmd("FileType", {
-  pattern = "typescript",
+  pattern = { "*.tsx", "*.ts", "*.js", "*.jsx" },
   command =
   "lua vim.lsp.buf.execute_command { command = '_typescript.organizeImports', arguments = { vim.fn.expand('%:p') } }",
 })

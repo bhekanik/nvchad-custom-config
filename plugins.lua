@@ -40,16 +40,7 @@ local plugins = {
   },
 
   {
-    "max397574/better-escape.nvim",
-    event = "InsertEnter",
-    config = function()
-      require("better_escape").setup()
-    end,
-  },
-
-  {
     "NvChad/nvim-colorizer.lua",
-    enabled = false,
   },
 
   {
@@ -187,6 +178,11 @@ local plugins = {
 
   {
     "mg979/vim-visual-multi",
+  },
+
+  {
+    "tpope/vim-fugitive",
+    lazy = false,
   },
 }
 

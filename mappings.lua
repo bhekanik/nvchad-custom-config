@@ -39,6 +39,24 @@ M.general = {
       end,
       "Toggle Oil floating",
     },
+    ["<leader>pf"] = {
+      function()
+        require("telescope.builtin").find_files()
+      end,
+      "Find files",
+    },
+    ["<C-p>"] = {
+      function()
+        require("telescope.builtin").git_files()
+      end,
+      "Find git files",
+    },
+    ["<leader>ps"] = {
+      function()
+        require("telescope.builtin").grep_string { search = vim.fn.input "Grep > " }
+      end,
+      "Grep",
+    },
   },
 
   i = {

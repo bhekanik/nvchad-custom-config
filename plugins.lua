@@ -177,10 +177,6 @@ local plugins = {
   },
 
   {
-    "mg979/vim-visual-multi",
-  },
-
-  {
     "tpope/vim-fugitive",
     lazy = false,
   },
